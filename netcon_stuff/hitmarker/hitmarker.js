@@ -27,7 +27,8 @@ const onChange = data => {
 		if (ticksLeft > 0) {
 			clearTimeout(timeout);
 
-			socket.write(`cl_crosshaircolor 5; cl_crosshaircolor_r 255; cl_crosshaircolor_g 0; cl_crosshaircolor_b 0\n`);
+			socket.write(`cl_crosshaircolor 0; cl_crosshaircolor_r 255; cl_crosshaircolor_g 0; cl_crosshaircolor_b 0; playvol buttons/arena_switch_press_02 0.6\n`);
+			console.log("Player hit.");
 			
 			timeout = setTimeout(() => {
 				socket.write(`cl_crosshaircolor 5; cl_crosshaircolor_r 0; cl_crosshaircolor_g 255; cl_crosshaircolor_b 0\n`);
